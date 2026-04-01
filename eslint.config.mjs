@@ -28,7 +28,6 @@ export default defineConfig([
             'no-debugger': 'warn',
             'no-empty': 'error',
             semi: ['warn', 'never'],
-            'newline-before-return': 'error',
             'space-in-parens': 'error',
             'react/jsx-wrap-multilines': 'off',
             'react/no-unescaped-entities': 'off',
