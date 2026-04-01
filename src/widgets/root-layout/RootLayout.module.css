@@ -1,0 +1,9 @@
+@reference "#tw";
+
+.wrapper {
+    @apply min-h-full flex flex-col;
+}
+
+.main {
+    @apply flex-auto;
+}

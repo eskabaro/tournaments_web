@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { FC, PropsWithChildren } from 'react'
 import RootLayout from '@widgets/root-layout'
-import './globals.css'
+import '@shared/styles/globals.css'
 
 export const metadata: Metadata = {
     title: 'Tournaments',
