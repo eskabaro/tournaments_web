@@ -1,11 +1,100 @@
 {
-    "posts": [
+    "tournaments": [
         {
-            "id": 1,
-            "title": "hello"
+            "id": "1",
+            "title": "CS2 Global Championship",
+            "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e",
+            "description": "Compete with the best Counter-Strike 2 teams worldwide.",
+            "game": "CS2",
+            "startDate": "2026-05-10",
+            "endDate": "2026-05-20",
+            "participants": 128,
+            "maxParticipants": 128,
+            "isJoined": false
+        },
+        {
+            "id": "2",
+            "title": "Dota 2 Masters League",
+            "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420",
+            "description": "Join the ultimate Dota 2 experience.",
+            "game": "Dota 2",
+            "startDate": "2026-06-01",
+            "endDate": "2026-06-15",
+            "participants": 96,
+            "maxParticipants": 128,
+            "isJoined": false
+        },
+        {
+            "id": "3",
+            "title": "Fortnite Battle Royale Cup",
+            "image": "https://images.unsplash.com/photo-1605902711622-cfb43c4437d1",
+            "description": "Survive and dominate in Fortnite.",
+            "game": "Fortnite",
+            "startDate": "2026-04-20",
+            "endDate": "2026-04-25",
+            "participants": 200,
+            "maxParticipants": 200,
+            "isJoined": true
+        },
+        {
+            "id": "4",
+            "title": "Valorant Pro Invitational",
+            "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f",
+            "description": "Precision shooting meets strategy.",
+            "game": "Valorant",
+            "startDate": "2026-05-05",
+            "endDate": "2026-05-12",
+            "participants": 64,
+            "maxParticipants": 64,
+            "isJoined": false
+        },
+        {
+            "id": "5",
+            "title": "League of Legends Clash",
+            "image": "https://images.unsplash.com/photo-1580128637393-4a8c1e0f5b6d",
+            "description": "Team-based MOBA competition.",
+            "game": "League of Legends",
+            "startDate": "2026-06-10",
+            "endDate": "2026-06-25",
+            "participants": 80,
+            "maxParticipants": 128,
+            "isJoined": false
+        },
+        {
+            "id": "6",
+            "title": "Apex Legends Showdown",
+            "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6",
+            "description": "Fast-paced team battles.",
+            "game": "Apex Legends",
+            "startDate": "2026-04-15",
+            "endDate": "2026-04-18",
+            "participants": 60,
+            "maxParticipants": 60,
+            "isJoined": false
+        },
+        {
+            "id": "7",
+            "title": "Warzone Elite Cup",
+            "image": "https://images.unsplash.com/photo-1542751110-97427bbecf20",
+            "description": "Battle royale at its peak.",
+            "game": "Call of Duty",
+            "startDate": "2026-05-22",
+            "endDate": "2026-05-30",
+            "participants": 150,
+            "maxParticipants": 150,
+            "isJoined": false
+        },
+        {
+            "id": "8",
+            "title": "PUBG Survival Tournament",
+            "image": "https://images.unsplash.com/photo-1520975922284-7bde5a0b95a3",
+            "description": "Outlast your enemies.",
+            "game": "PUBG",
+            "startDate": "2026-07-01",
+            "endDate": "2026-07-10",
+            "participants": 100,
+            "maxParticipants": 100,
+            "isJoined": false
         }
-    ],
-    "profile": {
-        "name": "typicode"
-    }
+    ]
 }
