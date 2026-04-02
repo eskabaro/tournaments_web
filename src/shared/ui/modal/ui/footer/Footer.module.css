@@ -1,0 +1,5 @@
+@reference "#tw";
+
+.main {
+    @apply px-3 py-4 justify-between flex items-center;
+}

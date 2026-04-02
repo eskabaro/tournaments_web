@@ -1,2 +1,5 @@
-const Loading = () => <div className='h-7 w-48 animate-pulse rounded bg-[var(--color-bg-secondary)]' />
-export default Loading
+'use client'
+import { Loading } from '@widgets/modal-tournament'
+
+const LoadingPage = () => <Loading type='replace' />
+export default LoadingPage

@@ -1,0 +1,96 @@
+@reference "#tw";
+
+.main {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2
+        whitespace-nowrap font-medium leading-none
+        w-fit transition-colors duration-200;
+
+    &.full {
+        @apply w-full;
+    }
+}
+
+.large {
+    @apply h-[46px] px-5 py-3 rounded-lg;
+
+    & > svg {
+        @apply shrink-0 size-5;
+    }
+}
+
+.small {
+    @apply h-[38px] px-[11px] py-2.5 rounded;
+
+    & > svg {
+        @apply shrink-0 size-4;
+    }
+}
+
+.square {
+    @apply size-[38px] p-0 rounded bg-transparent text-text-secondary
+        active:text-text-primary
+        focus-visible:outline-1 focus-visible:outline-accent-subtle focus-visible:text-text-primary
+        disabled:cursor-default disabled:text-text-disabled;
+
+    & > svg {
+        @apply shrink-0 size-4;
+    }
+
+    @media (any-hover: hover) {
+        &:hover:not(:disabled) {
+            @apply text-text-primary;
+        }
+    }
+}
+
+.primary {
+    @apply relative bg-accent text-bg
+        active:bg-accent-hover
+        focus-visible:bg-accent-hover focus-visible:outline-1 focus-visible:outline-accent-subtle
+        disabled:cursor-default disabled:bg-bg-tertiary disabled:text-text-disabled;
+
+    @media (any-hover: hover) {
+        &:hover:not(:disabled) {
+            @apply bg-accent-hover;
+        }
+    }
+}
+
+.secondary {
+    @apply bg-accent-subtle text-accent
+        active:bg-accent-hover active:text-bg
+        focus-visible:bg-accent-hover focus-visible:text-bg focus-visible:outline-1 focus-visible:outline-accent-subtle
+        disabled:cursor-default disabled:bg-bg-tertiary disabled:text-text-disabled;
+
+    @media (any-hover: hover) {
+        &:hover:not(:disabled) {
+            @apply bg-accent-hover text-bg;
+        }
+    }
+}
+
+.transparent {
+    @apply bg-transparent text-text-secondary
+        active:text-text-primary
+        focus-visible:outline-1 focus-visible:outline-accent-subtle focus-visible:text-text-primary
+        disabled:cursor-default disabled:text-text-disabled;
+
+    @media (any-hover: hover) {
+        &:hover:not(:disabled) {
+            @apply text-text-primary;
+        }
+    }
+}
+
+.border {
+    @apply bg-transparent border border-border text-text-secondary
+        active:text-text-primary
+        focus-visible:outline-1 focus-visible:outline-accent-subtle focus-visible:text-text-primary
+        disabled:cursor-default disabled:text-text-disabled;
+
+    @media (any-hover: hover) {
+        &:hover:not(:disabled) {
+            @apply bg-bg-tertiary text-text-primary;
+        }
+    }
+}

@@ -1,0 +1,5 @@
+@reference "#tw";
+
+.footer {
+    @apply border-t border-border;
+}

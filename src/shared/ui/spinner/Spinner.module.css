@@ -1,0 +1,36 @@
+@reference "#tw";
+
+.main {
+    @apply shrink-0;
+
+    & > svg {
+        @apply size-full;
+        animation: spin 600ms linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.size12 {
+    @apply size-3;
+}
+
+.size16 {
+    @apply size-4;
+}
+
+.size20 {
+    @apply size-5;
+}
+
+.size24 {
+    @apply size-6;
+}
+
+.size48 {
+    @apply size-12;
+}

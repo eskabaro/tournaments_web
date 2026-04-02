@@ -1,21 +1,23 @@
-import { notFound } from 'next/navigation'
-import type { FC } from 'react'
+'use client'
+import type { FC, PropsWithChildren } from 'react'
 import Modal from '@shared/ui/modal'
-import { tournamentApi } from '@entities/tournament'
+import Content from './components/content'
+import Loading from './components/loading'
+import { useModalClose } from './hooks/useModalClose'
+import s from './ModalTournament.module.css'
+import type { ModalPropsWithType } from './types'
 
-export interface ModalTournamentProps {
-    params: Promise<{ id: string }>
-}
+interface Props extends PropsWithChildren, ModalPropsWithType {}
 
-const ModalTournament: FC<ModalTournamentProps> = async ({ params }) => {
-    const { id } = await params
-    const data = await tournamentApi.getTournamentById(id).catch(notFound)
+const ModalTournament: FC<Props> = ({ type, children }) => {
+    const handleClose = useModalClose(type)
 
     return (
-        <Modal>
-            <h2 className='text-[var(--color-text-primary)] text-xl font-semibold'>{data.game}</h2>
+        <Modal style={s.main} close={handleClose} size='medium'>
+            {children}
         </Modal>
     )
 }
 
+export { Content, Loading }
 export default ModalTournament
