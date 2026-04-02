@@ -1,9 +1,44 @@
 @reference "#tw";
 
-.wrapper {
-    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/60;
+.dialog {
+    @apply m-auto w-[calc(100%-2rem)] rounded-xl bg-[var(--color-bg)] shadow-xl
+        opacity-0 scale-95 translate-y-4
+        transition-[opacity,scale,translate,overlay] duration-250 ease-in-out
+        [transition-behavior:allow-discrete];
 }
 
-.main {
-    @apply relative w-full max-w-lg rounded-xl bg-[var(--color-bg)] p-6 shadow-xl;
+.dialog[open] {
+    @apply flex flex-col opacity-100 scale-100 translate-y-0;
+}
+
+.dialog[open]::backdrop {
+    @apply opacity-100;
+}
+
+.small {
+    @apply max-w-sm;
+}
+
+.medium {
+    @apply max-w-lg;
+}
+
+.large {
+    @apply max-w-3xl;
+}
+
+.dialog::backdrop {
+    @apply bg-black/60 opacity-0
+        transition-[opacity,overlay] duration-250 ease-in-out
+        [transition-behavior:allow-discrete];
+}
+
+@starting-style {
+    .dialog[open] {
+        @apply opacity-0 scale-95 translate-y-4;
+    }
+
+    .dialog[open]::backdrop {
+        @apply opacity-0;
+    }
 }

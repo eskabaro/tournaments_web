@@ -1,21 +1,28 @@
 import { ThemeProvider } from 'next-themes'
-import type { FC, PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren, ReactNode } from 'react'
 import { THEME, THEMES } from '@shared/const/theme'
 import Footer from './components/footer'
 import Header from './components/header'
 import s from './RootLayout.module.css'
 
-const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+export interface RootLayoutProps extends PropsWithChildren {
+    main: ReactNode
+    modals: ReactNode
+}
+
+const RootLayout: FC<RootLayoutProps> = ({ children, main, modals }) => {
     return (
         <html suppressHydrationWarning lang='en'>
             <body>
-                <div className={s.wrapper}>
-                    <ThemeProvider themes={[...THEMES]} defaultTheme={THEME.light}>
+                <ThemeProvider themes={[...THEMES]} defaultTheme={THEME.light}>
+                    <div className={s.wrapper}>
                         <Header />
-                        <main className={s.main}>{children}</main>
+                        <main className={s.main}>{main}</main>
                         <Footer />
-                    </ThemeProvider>
-                </div>
+                    </div>
+                    {modals}
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     )

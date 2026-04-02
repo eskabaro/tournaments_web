@@ -1,6 +1,13 @@
 import type { FC } from 'react'
-import type { ModalTournamentProps } from '@widgets/modal-tournament'
-import ModalTournament from '@widgets/modal-tournament'
+import { Content } from '@widgets/modal-tournament'
 
-const ModalTournamentRoute: FC<ModalTournamentProps> = (props) => <ModalTournament {...props} />
+interface Props {
+    params: Promise<{ id: string }>
+}
+
+const ModalTournamentRoute: FC<Props> = async ({ params }) => {
+    const {} = await params
+
+    return <Content type='back' />
+}
 export default ModalTournamentRoute

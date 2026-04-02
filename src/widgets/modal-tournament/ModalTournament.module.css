@@ -1,0 +1,5 @@
+@reference "#tw";
+
+.main {
+    @apply border border-border rounded-xl;
+}

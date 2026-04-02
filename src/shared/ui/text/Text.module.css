@@ -1,0 +1,73 @@
+@reference "#tw";
+
+.main {
+    @apply leading-normal;
+
+    &.truncate {
+        @apply overflow-hidden text-ellipsis whitespace-nowrap;
+    }
+}
+
+.xs {
+    @apply text-xs;
+}
+
+.sm {
+    @apply text-sm;
+}
+
+.md {
+    @apply text-base;
+}
+
+.lg {
+    @apply text-lg;
+}
+
+.xl {
+    @apply text-xl;
+}
+
+.size-2xl {
+    @apply text-2xl;
+}
+
+.size-3xl {
+    @apply text-3xl;
+}
+
+.regular {
+    @apply font-normal;
+}
+
+.medium {
+    @apply font-medium;
+}
+
+.semibold {
+    @apply font-semibold;
+}
+
+.bold {
+    @apply font-bold;
+}
+
+.primary {
+    @apply text-text-primary;
+}
+
+.secondary {
+    @apply text-text-secondary;
+}
+
+.placeholder {
+    @apply text-text-placeholder;
+}
+
+.disabled {
+    @apply text-text-disabled;
+}
+
+.accent {
+    @apply text-accent;
+}

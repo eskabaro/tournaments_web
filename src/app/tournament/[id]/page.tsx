@@ -1,5 +1,14 @@
-import type { FC } from 'react'
-import { type ModalTournamentProps } from '@widgets/modal-tournament'
+import { type FC } from 'react'
+import { Content } from '@widgets/modal-tournament'
 
-const TournamentPage: FC<ModalTournamentProps> = (props) => <div>123</div>
+interface Props {
+    params: Promise<{ id: string }>
+}
+
+const TournamentPage: FC<Props> = async ({ params }) => {
+    const {} = await params
+
+    return <Content type='replace' />
+}
+
 export default TournamentPage
