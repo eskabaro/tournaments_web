@@ -1,4 +1,4 @@
-@reference "../../../../shared/styles/globals.css";
+@reference "#tw";
 
 .header {
     @apply flex items-center justify-between h-16 px-6 bg-bg-secondary border-b border-border;

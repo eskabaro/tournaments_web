@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { FC } from 'react'
-import Spinner from '@shared/ui/spinner'
+import { ROUTES } from '@shared/const/routes'
 import { tournamentApi } from '@entities/tournament'
 
 const Home: FC = async () => {
@@ -11,12 +11,11 @@ const Home: FC = async () => {
             Home
             <div style={{ display: 'flex', gap: 12 }}>
                 {data.map((item) => (
-                    <Link key={item.id} href={`tournament/${item.id}`}>
+                    <Link key={item.id} href={ROUTES.tournament(item.id)}>
                         {item.game}
                     </Link>
                 ))}
             </div>
-            <Spinner color='success' />
         </div>
     )
 }

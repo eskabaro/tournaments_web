@@ -1,5 +1,5 @@
 'use client'
-import type { FC, PropsWithChildren, MouseEvent } from 'react'
+import type { FC, MouseEvent, ComponentProps } from 'react'
 import { useEffect, useRef } from 'react'
 import classnames from '@shared/utils/classnames'
 import s from './Modal.module.css'
@@ -7,13 +7,12 @@ import Body from './ui/body'
 import Footer from './ui/footer'
 import Header from './ui/header'
 
-interface Props extends PropsWithChildren {
+interface Props extends ComponentProps<'div'> {
     close?: () => void
-    style?: string
     size?: 'small' | 'medium' | 'large'
 }
 
-const Modal: FC<Props> = ({ close, size = 'small', style, children }) => {
+const Modal: FC<Props> = ({ close, size = 'small', className, children }) => {
     const ref = useRef<HTMLDialogElement>(null)
 
     const handleBackdropClick = (e: MouseEvent<HTMLDialogElement>) => {
@@ -30,7 +29,7 @@ const Modal: FC<Props> = ({ close, size = 'small', style, children }) => {
 
     return (
         <dialog ref={ref} onClose={close} onClick={handleBackdropClick} className={classnames(s.dialog, s[size])}>
-            <div className={classnames(s.main, style)}>{children}</div>
+            <div className={classnames(s.main, className)}>{children}</div>
         </dialog>
     )
 }

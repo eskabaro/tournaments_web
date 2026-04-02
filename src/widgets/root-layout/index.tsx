@@ -14,7 +14,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children, main, modals }) => {
     return (
         <html suppressHydrationWarning lang='en'>
             <body>
-                <ThemeProvider themes={[...THEMES]} defaultTheme={THEME.light}>
+                <ThemeProvider themes={[...THEMES]} defaultTheme={THEME.light} enableSystem>
                     <div className={s.wrapper}>
                         <Header />
                         <main className={s.main}>{main}</main>

@@ -16,7 +16,7 @@ const Content: FC<ModalPropsWithType> = ({ type }) => {
                 </Text>
             </Modal.Header>
             <Modal.Body>Body</Modal.Body>
-            <Modal.Footer style={s.footer}>Footer</Modal.Footer>
+            <Modal.Footer className={s.footer}>Footer</Modal.Footer>
         </Fragment>
     )
 }
