@@ -1,7 +1,7 @@
 @reference "#tw";
 
 .header {
-    @apply flex items-center h-16 bg-bg-secondary border-b border-border;
+    @apply sticky top-0 z-50 flex items-center h-16 bg-bg-secondary border-b border-border;
 }
 
 .wrapper {
