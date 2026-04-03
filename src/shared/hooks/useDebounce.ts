@@ -2,7 +2,12 @@ import { useEffect, useRef } from 'react'
 
 export const useDebounce = (callback: () => void, delay: number, deps: Array<unknown>) => {
     const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+    const callbackRef = useRef(callback)
     const isFirstRender = useRef(true)
+
+    useEffect(() => {
+        callbackRef.current = callback
+    }, [callback])
 
     useEffect(() => {
         if (isFirstRender.current) {
@@ -10,11 +15,8 @@ export const useDebounce = (callback: () => void, delay: number, deps: Array<unk
             return
         }
 
-        timeoutRef.current = setTimeout(callback, delay)
+        timeoutRef.current = setTimeout(() => callbackRef.current(), delay)
 
-        return () => {
-            if (!timeoutRef.current) return
-            clearTimeout(timeoutRef.current)
-        }
+        return () => clearTimeout(timeoutRef.current!)
     }, deps) // eslint-disable-line react-hooks/exhaustive-deps
 }

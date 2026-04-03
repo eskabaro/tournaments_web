@@ -1,9 +1,4 @@
-import Modal from '@shared/ui/modal'
+import { NotFound as ModalNotFound } from '@widgets/modal-tournament'
 
-const NotFound = () => (
-    <Modal>
-        <h2 className='text-[var(--color-text-primary)] text-xl font-semibold'>Tournament not found</h2>
-    </Modal>
-)
-
+const NotFound = () => <ModalNotFound type='replace' />
 export default NotFound

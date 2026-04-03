@@ -57,7 +57,7 @@ export default defineConfig([
                         { pattern: '@entities/**', group: 'internal', position: 'after' },
                         { pattern: '@features/**', group: 'internal', position: 'after' },
                         { pattern: '@widgets/**', group: 'internal', position: 'after' },
-                        { pattern: '@pages/**', group: 'internal', position: 'after' },
+                        { pattern: '@screens/**', group: 'internal', position: 'after' },
                         { pattern: '@app/**', group: 'internal', position: 'after' }
                     ],
                     pathGroupsExcludedImportTypes: ['builtin'],

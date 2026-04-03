@@ -2,7 +2,7 @@
 import { type FC, useState } from 'react'
 import { Alert } from '@shared/state/useAlertStore'
 import Button from '@shared/ui/button'
-import { join } from '../../actions/join'
+import { join } from '../../actions'
 
 interface Props {
     tournamentId: string

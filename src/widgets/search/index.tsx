@@ -16,7 +16,8 @@ const Search: FC = () => {
         () => {
             const params = new URLSearchParams()
             if (query.trim()) params.set('q', query.trim())
-            router.push(`/?${params.toString()}`)
+            const qs = params.toString()
+            router.push(qs ? `/?${qs}` : '/')
         },
         400,
         [query]
@@ -25,7 +26,7 @@ const Search: FC = () => {
     return (
         <section className={s.main}>
             <Input value={query} onChange={(e) => setQuery(e.target.value)} variant='small' icon='search' placeholder='Search...' />
-            <Button onClick={() => setQuery('')} variant='square' icon='x-mark' />
+            <Button onClick={() => setQuery('')} variant='square' icon='x-mark' aria-label='Clear search' />
         </section>
     )
 }

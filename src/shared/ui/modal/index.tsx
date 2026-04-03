@@ -17,8 +17,7 @@ const Modal: FC<Props> = ({ close, size = 'small', className, children }) => {
     const ref = useRef<HTMLDialogElement>(null)
 
     const handleBackdropClick = (e: MouseEvent<HTMLDialogElement>) => {
-        const dialog = ref.current
-        if (!ref.current || e.target !== dialog) return
+        if (!ref.current || e.target !== ref.current) return
 
         const rect = ref.current.getBoundingClientRect()
         const clickedInside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom

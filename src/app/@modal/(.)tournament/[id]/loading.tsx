@@ -1,6 +1,6 @@
 'use client'
 import type { FC } from 'react'
-import { Loading } from '@widgets/modal-tournament'
+import { Loading as ModalLoading } from '@widgets/modal-tournament'
 
-const LoadingPage: FC = () => <Loading type='back' />
-export default LoadingPage
+const Loading: FC = () => <ModalLoading type='back' />
+export default Loading

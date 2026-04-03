@@ -19,7 +19,7 @@ This is a **Next.js 16 App Router** tournament discovery app using **Feature Sli
 | Alias | Layer | Purpose |
 |-------|-------|---------|
 | `@app/*` | app | Next.js routing, layouts, providers |
-| `@pages/*` | pages | Page-level async components |
+| `@screens/*` | screens | Page-level async components |
 | `@widgets/*` | widgets | Composite UI blocks (header, footer, modal content) |
 | `@features/*` | features | Feature-specific logic |
 | `@entities/*` | entities | Domain models, types, and API classes |
