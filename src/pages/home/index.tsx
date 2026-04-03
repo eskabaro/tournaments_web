@@ -1,22 +1,25 @@
-import Link from 'next/link'
+'use client'
 import type { FC } from 'react'
-import { ROUTES } from '@shared/const/routes'
-import { tournamentApi } from '@entities/tournament'
+import EmptyState from '@shared/ui/empty-state'
+import type { ITournament } from '@entities/tournament'
+import { TournamentCard } from '@entities/tournament'
+import s from './Home.module.css'
 
-const Home: FC = async () => {
-    const data = await tournamentApi.getTournaments()
+interface Props {
+    data: Array<ITournament>
+}
+
+const Home: FC<Props> = ({ data }) => {
+    if (!data.length) return <EmptyState />
 
     return (
-        <div>
-            Home
-            <div style={{ display: 'flex', gap: 12 }}>
-                {data.map((item) => (
-                    <Link key={item.id} href={ROUTES.tournament(item.id)}>
-                        {item.game}
-                    </Link>
-                ))}
-            </div>
-        </div>
+        <ul className={s.grid}>
+            {data.map((item) => (
+                <li key={item.id}>
+                    <TournamentCard {...item} />
+                </li>
+            ))}
+        </ul>
     )
 }
 

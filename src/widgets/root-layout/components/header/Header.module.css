@@ -1,5 +1,9 @@
 @reference "#tw";
 
 .header {
-    @apply flex items-center justify-between h-16 px-6 bg-bg-secondary border-b border-border;
+    @apply flex items-center h-16 bg-bg-secondary border-b border-border;
+}
+
+.wrapper {
+    @apply flex items-center justify-between container;
 }

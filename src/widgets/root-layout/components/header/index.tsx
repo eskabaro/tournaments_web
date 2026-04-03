@@ -6,8 +6,10 @@ import s from './Header.module.css'
 const Header: FC = () => {
     return (
         <header className={s.header}>
-            <Text as='h1'>Tournaments</Text>
-            <ThemeSwitcher />
+            <div className={s.wrapper}>
+                <Text as='h1'>Tournaments</Text>
+                <ThemeSwitcher />
+            </div>
         </header>
     )
 }

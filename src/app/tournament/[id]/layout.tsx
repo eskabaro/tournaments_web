@@ -1,9 +1,26 @@
-'use client'
-import type { FC, PropsWithChildren } from 'react'
+import { cacheLife, cacheTag } from 'next/cache'
+import { Fragment, type FC, type PropsWithChildren } from 'react'
+import { TOURNAMENT_CACHE, tournamentApi } from '@entities/tournament'
 import ModalTournament from '@widgets/modal-tournament'
+import Home from '@pages/home'
 
-const ModalTournamentLayout: FC<PropsWithChildren> = ({ children }) => {
-    return <ModalTournament type='replace'>{children}</ModalTournament>
+const TournamentsList: FC = async () => {
+    'use cache'
+    cacheLife(TOURNAMENT_CACHE.profiles.list)
+    cacheTag(TOURNAMENT_CACHE.tags.list)
+
+    const data = await tournamentApi.getTournaments()
+
+    return <Home data={data} />
 }
 
-export default ModalTournamentLayout
+const TournamentLayout: FC<PropsWithChildren> = ({ children }) => {
+    return (
+        <Fragment>
+            <TournamentsList />
+            <ModalTournament type='replace'>{children}</ModalTournament>
+        </Fragment>
+    )
+}
+
+export default TournamentLayout

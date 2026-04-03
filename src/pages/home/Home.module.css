@@ -11,15 +11,3 @@
         @apply grid-cols-3;
     }
 }
-
-.card {
-    @apply rounded-xl overflow-hidden border border-border bg-bg-secondary;
-}
-
-.image {
-    @apply aspect-video w-full;
-}
-
-.body {
-    @apply p-3 flex flex-col gap-2;
-}

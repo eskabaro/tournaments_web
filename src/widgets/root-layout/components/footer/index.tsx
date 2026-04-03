@@ -5,7 +5,9 @@ import s from './Footer.module.css'
 const Footer: FC = () => {
     return (
         <footer className={s.footer}>
-            <Text as='span'>Created by OK</Text>
+            <div className={s.wrapper}>
+                <Text as='span'>Created by OK</Text>
+            </div>
         </footer>
     )
 }

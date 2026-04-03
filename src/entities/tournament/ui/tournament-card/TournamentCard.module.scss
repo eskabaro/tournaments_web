@@ -1,0 +1,28 @@
+@reference "#tw";
+
+.card {
+    @apply rounded-xl overflow-hidden border border-border bg-bg-secondary transition-colors cursor-pointer;
+
+    &:hover {
+        @apply border-border-secondary;
+    }
+}
+
+.image {
+    @apply aspect-video w-full object-cover;
+}
+
+.body {
+    @apply p-3 flex items-center justify-between gap-2;
+}
+
+.badge {
+    @apply shrink-0 text-xs font-medium px-2 py-0.5 rounded-full bg-accent-subtle text-accent;
+}
+
+.title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}

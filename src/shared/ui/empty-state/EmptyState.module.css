@@ -1,0 +1,5 @@
+@reference "#tw";
+
+.main {
+    @apply flex-auto flex flex-col items-center justify-center gap-1 text-center;
+}

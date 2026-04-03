@@ -1,5 +1,17 @@
 @reference "#tw";
 
+.body {
+    @apply flex flex-col gap-4;
+}
+
+.image {
+    @apply w-full rounded-lg object-cover aspect-video;
+}
+
+.description {
+    @apply text-text-secondary;
+}
+
 .footer {
-    @apply border-t border-border;
+    @apply border-t border-border flex justify-end;
 }
