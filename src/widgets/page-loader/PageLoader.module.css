@@ -21,5 +21,13 @@
 }
 
 .body {
-    @apply p-3 flex flex-col gap-2;
+    @apply p-3 flex flex-col items-center justify-between gap-2;
+}
+
+.typography {
+    @apply flex flex-col gap-1 w-full;
+}
+
+.badge {
+    @apply rounded-full ml-auto;
 }

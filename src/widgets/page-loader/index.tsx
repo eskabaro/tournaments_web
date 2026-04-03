@@ -11,8 +11,11 @@ const PageLoader: FC = () => {
                 <div key={i} className={s.card}>
                     <Skeleton width='100%' className={s.image} />
                     <div className={s.body}>
-                        <Skeleton width='75%' height={20} />
-                        <Skeleton width='50%' height={20} />
+                        <div className={s.typography}>
+                            <Skeleton width='75%' height={28} />
+                            <Skeleton width='50%' height={20} />
+                        </div>
+                        <Skeleton width={70} height={22} className={s.badge} />
                     </div>
                 </div>
             ))}
