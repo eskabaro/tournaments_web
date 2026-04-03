@@ -7,6 +7,7 @@ import { useSearchStore } from '@shared/state/useSearchStore'
 import Button from '@shared/ui/button'
 import Input from '@shared/ui/input'
 import classnames from '@shared/utils/classnames'
+import Loading from './components/loading'
 import PendingOverlay from './components/pending-overlay'
 import s from './Search.module.css'
 
@@ -43,5 +44,5 @@ const Search: FC = () => {
     )
 }
 
-export { PendingOverlay }
+export { PendingOverlay, Loading }
 export default Search

@@ -7,7 +7,3 @@
 .main {
     @apply flex-auto flex flex-col container py-4 gap-4;
 }
-
-.searchSkeleton {
-    @apply rounded;
-}
