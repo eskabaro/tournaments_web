@@ -1,0 +1,9 @@
+@reference "#tw";
+
+.main {
+    @apply flex-auto flex flex-col;
+}
+
+.pending {
+    @apply opacity-50 pointer-events-none transition-opacity duration-200;
+}

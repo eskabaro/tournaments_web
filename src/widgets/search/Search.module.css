@@ -1,5 +1,15 @@
 @reference "#tw";
 
 .main {
-    @apply flex items-center gap-1;
+    @apply relative flex items-center gap-1;
+}
+
+.spin {
+    animation: spin 600ms linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
