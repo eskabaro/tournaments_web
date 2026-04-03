@@ -5,8 +5,8 @@ import s from './Loading.module.css'
 const Loading: FC = () => {
     return (
         <div className={s.main}>
-            <Skeleton height={38} className={s.inputSkeleton} />
-            <Skeleton height={38} width={38} className={s.buttonSkeleton} />
+            <Skeleton className={s.inputSkeleton} />
+            <Skeleton className={s.buttonSkeleton} />
         </div>
     )
 }

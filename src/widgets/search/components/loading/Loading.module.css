@@ -1,13 +1,13 @@
 @reference "#tw";
 
 .main {
-    @apply flex items-center gap-1;
+    @apply flex items-center gap-1 self-start;
 }
 
 .inputSkeleton {
-    @apply flex-1 rounded;
+    @apply w-52 h-[38px] rounded;
 }
 
 .buttonSkeleton {
-    @apply rounded shrink-0;
+    @apply size-[38px] rounded shrink-0;
 }
