@@ -13,7 +13,7 @@ const ModalTournament: FC<Props> = ({ type, children }) => {
     const handleClose = useModalClose(type)
 
     return (
-        <Modal style={s.main} close={handleClose} size='medium'>
+        <Modal className={s.main} close={handleClose} size='medium'>
             {children}
         </Modal>
     )

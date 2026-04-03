@@ -1,0 +1,17 @@
+@reference "#tw";
+
+.body {
+    @apply flex flex-col gap-4;
+}
+
+.image {
+    @apply w-full aspect-video;
+}
+
+.text {
+    @apply flex flex-col gap-2;
+}
+
+.footer {
+    @apply border-t border-border;
+}

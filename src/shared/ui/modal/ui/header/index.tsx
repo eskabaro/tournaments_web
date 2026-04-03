@@ -1,16 +1,15 @@
-import type { FC, PropsWithChildren } from 'react'
+import type { ComponentProps, FC } from 'react'
 import Button from '@shared/ui/button'
 import classnames from '@shared/utils/classnames'
 import s from './Header.module.css'
 
-interface Props extends PropsWithChildren {
+interface Props extends ComponentProps<'div'> {
     close?: () => void
-    style?: string
 }
 
-const Header: FC<Props> = ({ close, style, children }) => {
+const Header: FC<Props> = ({ close, className, children }) => {
     return (
-        <div className={classnames(s.main, style)}>
+        <div className={classnames(s.main, className)}>
             {children}
             {close && <Button onClick={close} icon='x-mark' variant='square' />}
         </div>

@@ -10,13 +10,8 @@ export const metadata: Metadata = {
 
 interface LayoutProps {
     children: ReactNode
-    main: ReactNode
-    modals: ReactNode
+    modal: ReactNode
 }
 
-const Layout: FC<LayoutProps> = ({ children, main, modals }) => (
-    <RootLayout main={main} modals={modals}>
-        {children}
-    </RootLayout>
-)
+const Layout: FC<LayoutProps> = ({ children, modal }) => <RootLayout modal={modal}>{children}</RootLayout>
 export default Layout

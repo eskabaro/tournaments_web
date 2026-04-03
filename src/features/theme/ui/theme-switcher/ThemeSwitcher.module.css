@@ -1,0 +1,42 @@
+@reference "#tw";
+
+.wrapper {
+    @apply flex items-center gap-1;
+}
+
+.cycle {
+    @apply size-[38px] flex items-center justify-center cursor-pointer
+        bg-transparent text-text-secondary rounded
+        active:text-text-primary
+        focus-visible:outline-1 focus-visible:outline-accent-subtle focus-visible:text-text-primary;
+
+    @media (any-hover: hover) {
+        &:hover {
+            @apply text-text-primary;
+        }
+    }
+
+    & > svg {
+        @apply shrink-0 size-4;
+    }
+}
+
+.icon {
+    @apply hidden;
+}
+
+:global([data-theme='light']) .icon:nth-child(1) {
+    @apply block;
+}
+
+:global([data-theme='dark']) .icon:nth-child(2) {
+    @apply block;
+}
+
+:global([data-theme='neon']) .icon:nth-child(3) {
+    @apply block;
+}
+
+.active {
+    @apply text-accent;
+}

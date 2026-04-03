@@ -1,7 +1,9 @@
 import { Fragment, type FC } from 'react'
 import Modal from '@shared/ui/modal'
+import Skeleton from '@shared/ui/skeleton'
 import { useModalClose } from '../../hooks/useModalClose'
 import type { ModalPropsWithType } from '../../types'
+import s from './Loading.module.css'
 
 const Loading: FC<ModalPropsWithType> = ({ type }) => {
     const handleClose = useModalClose(type)
@@ -9,12 +11,19 @@ const Loading: FC<ModalPropsWithType> = ({ type }) => {
     return (
         <Fragment>
             <Modal.Header close={handleClose}>
-                <div className='h-7 w-48 animate-pulse rounded bg-amber-600' />
+                <Skeleton width={200} height={32} />
             </Modal.Header>
-            <Modal.Body>
-                <div className='h-4 w-full animate-pulse rounded bg-amber-600/50' />
-                <div className='mt-2 h-4 w-2/3 animate-pulse rounded bg-amber-600/50' />
+            <Modal.Body className={s.body}>
+                <Skeleton className={s.image} />
+                <div className={s.text}>
+                    <Skeleton width='100%' height={16} />
+                    <Skeleton width='75%' height={16} />
+                    <Skeleton width='50%' height={16} />
+                </div>
             </Modal.Body>
+            <Modal.Footer className={s.footer}>
+                <Skeleton width='100%' height={46} />
+            </Modal.Footer>
         </Fragment>
     )
 }

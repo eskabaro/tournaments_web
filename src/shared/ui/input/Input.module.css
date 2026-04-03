@@ -1,0 +1,37 @@
+@reference "#tw";
+
+.wrapper {
+    @apply relative flex items-center;
+}
+
+.input {
+    @apply w-full border border-border bg-bg-secondary text-text-primary placeholder:text-text-placeholder outline-none transition-colors;
+
+    &:focus {
+        @apply border-accent;
+    }
+}
+
+.large {
+    @apply h-[46px] px-5 py-3 rounded-lg text-base;
+
+    &.with-icon {
+        @apply pl-12;
+    }
+}
+
+.small {
+    @apply h-[38px] px-[11px] py-2.5 rounded text-sm;
+
+    &.with-icon {
+        @apply pl-9;
+    }
+}
+
+.icon-large {
+    @apply absolute left-4 text-text-placeholder pointer-events-none;
+}
+
+.icon-small {
+    @apply absolute left-3 text-text-placeholder pointer-events-none;
+}

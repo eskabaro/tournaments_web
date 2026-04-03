@@ -1,5 +1,6 @@
 'use client'
+import type { FC } from 'react'
 import { Loading } from '@widgets/modal-tournament'
 
-const LoadingPage = () => <Loading type='replace' />
+const LoadingPage: FC = () => <Loading type='replace' />
 export default LoadingPage

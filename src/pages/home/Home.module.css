@@ -1,0 +1,13 @@
+@reference "#tw";
+
+.grid {
+    @apply grid grid-cols-1 gap-4;
+
+    @media (width >= theme(--breakpoint-md)) {
+        @apply grid-cols-2;
+    }
+
+    @media (width >= theme(--breakpoint-lg)) {
+        @apply grid-cols-3;
+    }
+}

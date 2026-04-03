@@ -1,4 +1,6 @@
+import { cacheLife, cacheTag } from 'next/cache'
 import { type FC } from 'react'
+import { TOURNAMENT_CACHE, tournamentApi } from '@entities/tournament'
 import { Content } from '@widgets/modal-tournament'
 
 interface Props {
@@ -6,9 +8,14 @@ interface Props {
 }
 
 const TournamentPage: FC<Props> = async ({ params }) => {
-    const {} = await params
+    'use cache'
+    const { id } = await params
+    cacheLife(TOURNAMENT_CACHE.profiles.detail)
+    cacheTag(TOURNAMENT_CACHE.tags.detail(id))
 
-    return <Content type='replace' />
+    const tournament = await tournamentApi.getTournamentById(id)
+
+    return <Content type='replace' tournament={tournament} />
 }
 
 export default TournamentPage

@@ -65,6 +65,7 @@ export default defineConfig([
                     alphabetize: { order: 'asc', caseInsensitive: true }
                 }
             ],
+            'react-hooks/set-state-in-effect': 'off',
             'unused-imports/no-unused-imports': 'warn',
             'unused-imports/no-unused-vars': [
                 'warn',

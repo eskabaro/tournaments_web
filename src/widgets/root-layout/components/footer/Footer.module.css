@@ -1,0 +1,9 @@
+@reference "#tw";
+
+.footer {
+    @apply flex items-center justify-end h-16 bg-bg-secondary border-t border-border;
+}
+
+.wrapper {
+    @apply flex items-center justify-end container;
+}
