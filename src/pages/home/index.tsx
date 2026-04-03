@@ -1,4 +1,3 @@
-'use client'
 import type { FC } from 'react'
 import EmptyState from '@shared/ui/empty-state'
 import type { ITournament } from '@entities/tournament'

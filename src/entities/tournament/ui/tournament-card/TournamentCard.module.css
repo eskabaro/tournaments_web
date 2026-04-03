@@ -1,0 +1,48 @@
+@reference "#tw";
+
+.card {
+    @apply rounded-xl overflow-hidden border border-border bg-bg-secondary transition-colors;
+
+    @media (any-hover: hover) {
+        &:hover:not(:disabled) {
+            @apply border-border-secondary;
+        }
+    }
+}
+
+.image {
+    @apply aspect-video w-full object-cover;
+}
+
+.body {
+    @apply p-3 flex items-center flex-col justify-between gap-2;
+}
+
+.typography {
+    @apply flex gap-1 flex-col;
+
+    @media (any-hover: hover) {
+        &:hover:not(:disabled) * {
+            @apply underline;
+        }
+    }
+}
+
+.badge {
+    @apply shrink-0 text-xs font-medium px-2 py-0.5 rounded-full bg-accent-subtle text-accent ml-auto;
+}
+
+.joined {
+    @apply bg-success-subtle text-success;
+}
+
+.notJoined {
+    @apply bg-bg-tertiary text-text-secondary;
+}
+
+.text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}

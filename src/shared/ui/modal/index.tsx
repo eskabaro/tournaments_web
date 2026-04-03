@@ -2,6 +2,7 @@
 import type { FC, MouseEvent, ComponentProps } from 'react'
 import { useEffect, useRef } from 'react'
 import classnames from '@shared/utils/classnames'
+import { lockScroll, unlockScroll } from '@shared/utils/modal'
 import s from './Modal.module.css'
 import Body from './ui/body'
 import Footer from './ui/footer'
@@ -17,21 +18,20 @@ const Modal: FC<Props> = ({ close, size = 'small', className, children }) => {
 
     const handleBackdropClick = (e: MouseEvent<HTMLDialogElement>) => {
         const dialog = ref.current
-        if (!dialog || e.target !== dialog) return
+        if (!ref.current || e.target !== dialog) return
 
-        const rect = dialog.getBoundingClientRect()
+        const rect = ref.current.getBoundingClientRect()
         const clickedInside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom
 
-        if (!clickedInside) {
-            dialog.close()
-        }
+        if (!clickedInside) ref.current.close()
     }
 
     useEffect(() => {
-        const dialog = ref.current
-        if (!dialog || dialog.open) return
+        if (!ref.current) return
+        if (!ref.current.open) ref.current.showModal()
 
-        dialog.showModal()
+        lockScroll()
+        return () => unlockScroll()
     }, [])
 
     return (
