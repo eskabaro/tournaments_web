@@ -4,7 +4,7 @@ import type { FC } from 'react'
 import { Suspense } from 'react'
 import { TOURNAMENT_CACHE, tournamentApi } from '@entities/tournament'
 import PageLoader from '@widgets/page-loader'
-import Home from '@pages/home'
+import Home from '@screens/home'
 
 interface Props {
     searchParams: Promise<{ q?: string }>
@@ -20,7 +20,7 @@ const Tournaments: FC<{ query?: string }> = async ({ query }) => {
     return <Home data={data} />
 }
 
-const TournamentsWithSearch: FC<{ searchParams: Promise<{ q?: string }> }> = async ({ searchParams }) => {
+const TournamentsWithSearch: FC<Props> = async ({ searchParams }) => {
     await connection()
     const { q } = await searchParams
 

@@ -3,6 +3,7 @@ import type { FC, PropsWithChildren } from 'react'
 import Modal from '@shared/ui/modal'
 import Content from './components/content'
 import Loading from './components/loading'
+import NotFound from './components/not-found'
 import { useModalClose } from './hooks/useModalClose'
 import s from './ModalTournament.module.css'
 import type { ModalPropsWithType } from './types'
@@ -19,5 +20,5 @@ const ModalTournament: FC<Props> = ({ type, children }) => {
     )
 }
 
-export { Content, Loading }
+export { Content, Loading, NotFound }
 export default ModalTournament

@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import { Fragment, type FC } from 'react'
 import Modal from '@shared/ui/modal'
@@ -17,7 +18,7 @@ const Content: FC<Props> = ({ type, tournament }) => {
     return (
         <Fragment>
             <Modal.Header close={handleClose}>
-                <Text as='h1' size='2xl'>
+                <Text as='h2' size='2xl'>
                     {tournament.title}
                 </Text>
             </Modal.Header>

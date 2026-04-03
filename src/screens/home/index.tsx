@@ -1,4 +1,3 @@
-'use client'
 import type { FC } from 'react'
 import EmptyState from '@shared/ui/empty-state'
 import type { ITournament } from '@entities/tournament'
@@ -10,10 +9,10 @@ interface Props {
 }
 
 const Home: FC<Props> = ({ data }) => {
-    if (!data.length) return <EmptyState />
+    if (!data?.length) return <EmptyState />
 
     return (
-        <ul className={s.grid}>
+        <ul className={s.grid} aria-label='Tournaments list'>
             {data.map((item) => (
                 <li key={item.id}>
                     <TournamentCard {...item} />

@@ -2,7 +2,7 @@ import { cacheLife, cacheTag } from 'next/cache'
 import { Fragment, type FC, type PropsWithChildren } from 'react'
 import { TOURNAMENT_CACHE, tournamentApi } from '@entities/tournament'
 import ModalTournament from '@widgets/modal-tournament'
-import Home from '@pages/home'
+import Home from '@screens/home'
 
 const TournamentsList: FC = async () => {
     'use cache'
@@ -14,7 +14,7 @@ const TournamentsList: FC = async () => {
     return <Home data={data} />
 }
 
-const TournamentLayout: FC<PropsWithChildren> = ({ children }) => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
     return (
         <Fragment>
             <TournamentsList />
@@ -23,4 +23,4 @@ const TournamentLayout: FC<PropsWithChildren> = ({ children }) => {
     )
 }
 
-export default TournamentLayout
+export default Layout
