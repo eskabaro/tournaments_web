@@ -2,6 +2,7 @@ import { ThemeProvider } from 'next-themes'
 import { Suspense, type FC, type PropsWithChildren, type ReactNode } from 'react'
 import { THEME, THEMES } from '@shared/const/theme'
 import AlertProvider from '@shared/ui/alert'
+import Skeleton from '@shared/ui/skeleton'
 import Search, { PendingOverlay } from '@widgets/search'
 import Footer from './components/footer'
 import Header from './components/header'
@@ -19,7 +20,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children, modal }) => {
                     <div className={s.wrapper}>
                         <Header />
                         <main className={s.main}>
-                            <Suspense>
+                            <Suspense fallback={<Skeleton className={s.searchSkeleton} height={38} width='100%' />}>
                                 <Search />
                             </Suspense>
                             <PendingOverlay>{children}</PendingOverlay>
