@@ -57,9 +57,9 @@
 
 body,
 html {
-    @apply h-full;
+    @apply h-full [scrollbar-gutter:stable];
 }
 
 .scroll-lock {
-    overflow: hidden;
+    scrollbar-gutter: auto;
 }
